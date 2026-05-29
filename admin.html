@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AHAKM FRAMA | Admin Panel</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f2fcf5; text-align: center; padding: 30px; }
+        .admin-box { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: inline-block; width: 100%; max-width: 600px; margin-bottom: 20px;}
+        input { margin: 10px 0; padding: 10px; width: 80%; border: 1px solid #ccc; border-radius: 4px;}
+        button { background-color: #00c853; color: white; padding: 12px 20px; border: none; font-weight: bold; cursor: pointer; border-radius: 4px;}
+        .message-card { background: #e8f5e9; padding: 15px; margin-bottom: 15px; border-radius: 8px; text-align: left; border-left: 5px solid #00c853;}
+    </style>
+</head>
+<body>
+
+    <div class="admin-box">
+        <h2 style="color: #00c853;">Update Product Prices</h2>
+        <form method="POST">
+            <label>New Coconut Price (per Ton):</label><br>
+            <input type="text" name="coconut_price" required><br>
+            
+            <label>New Mango Price (per Kg):</label><br>
+            <input type="text" name="mango_price" required><br>
+            
+            <label>Admin Password:</label><br>
+            <input type="password" name="password" required><br>
+            
+            <button type="submit">Update Prices on Live Site</button>
+        </form>
+    </div>
+
+    <div class="admin-box">
+        <h2 style="color: #00c853;">Customer Inquiries Inbox</h2>
+        <p>Wholesale requests from your website will appear here.</p>
+        
+        {% for msg in messages %}
+            <div class="message-card">
+                <strong>Buyer Name:</strong> {{ msg[0] }} <br>
+                <strong>Phone Number:</strong> {{ msg[1] }} <br><br>
+                <strong>Message / Order Request:</strong><br>
+                {{ msg[2] }}
+            </div>
+        {% else %}
+            <p style="color: #666;">No new messages yet.</p>
+        {% endfor %}
+    </div>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+    <title>AHAKM FRAMA | Admin Panel</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f2fcf5; text-align: center; padding: 30px; }
+        .admin-box { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: inline-block; width: 100%; max-width: 600px; margin-bottom: 20px;}
+        input { margin: 10px 0; padding: 10px; width: 80%; border: 1px solid #ccc; border-radius: 4px;}
+        button { background-color: #00c853; color: white; padding: 12px 20px; border: none; font-weight: bold; cursor: pointer; border-radius: 4px;}
+        .message-card { background: #e8f5e9; padding: 15px; margin-bottom: 15px; border-radius: 8px; text-align: left; border-left: 5px solid #00c853;}
+    </style>
+</head>
+<body>
+
+    <div class="admin-box">
+        <h2 style="color: #00c853;">Update Product Prices</h2>
+        <form method="POST">
+            <label>New Coconut Price (per Ton):</label><br>
+            <input type="text" name="coconut_price" required><br>
+            
+            <label>New Mango Price (per Kg):</label><br>
+            <input type="text" name="mango_price" required><br>
+            
+            <label>Admin Password:</label><br>
+            <input type="password" name="password" required><br>
+            
+            <button type="submit">Update Prices on Live Site</button>
+        </form>
+    </div>
+
+    <div class="admin-box">
+        <h2 style="color: #00c853;">Customer Inquiries Inbox</h2>
+        <p>Wholesale requests from your website will appear here.</p>
+        
+        {% for msg in messages %}
+            <div class="message-card">
+                <strong>Buyer Name:</strong> {{ msg[0] }} <br>
+                <strong>Phone Number:</strong> {{ msg[1] }} <br><br>
+                <strong>Message / Order Request:</strong><br>
+                {{ msg[2] }}
+            </div>
+        {% else %}
+            <p style="color: #666;">No new messages yet.</p>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
